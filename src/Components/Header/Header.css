@@ -1,0 +1,115 @@
+.header {
+  height: 10vh;
+  margin-top: 3vh;
+  margin-bottom: 3vh;
+  margin-left: 50px;
+  margin-right: 50px;
+  border-radius: 15px;
+  border: solid black;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgba(255, 255, 255, 0.8);
+  position: sticky;
+  top: 3vh;
+  z-index: 100;
+  -webkit-box-shadow: 0px 0px 100px 5px rgba(0, 0, 0, 0.9);
+  -moz-box-shadow: 0px 0px 100px 5px rgba(0, 0, 0, 0.9);
+  box-shadow: 0px 0px 100px 5px rgba(0, 0, 0, 0.9);
+}
+
+.header__logo {
+  height: 5vh;
+  max-height: 40px;
+  margin-left: 30px;
+  transition: all ease-in 200ms;
+}
+
+.header__logo:hover {
+  height: 4vh;
+}
+
+.header__nav {
+  display: flex;
+  justify-content: space-evenly;
+  margin-right: 10px;
+}
+
+.header__option {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  margin-left: 20px;
+  margin-right: 20px;
+  color: black;
+}
+
+.header__option:hover {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.header__optionLineOne {
+  font-size: 20px;
+  transition: all ease-in 200ms;
+}
+
+.header__optionLineOne:hover {
+  font-size: 18px;
+}
+
+.header__optionLineTwo {
+  font-size: 25px;
+  font-weight: 800;
+  transition: all ease-in 200ms;
+}
+
+.header__optionLineTwo:hover {
+  font-size: 23px;
+}
+
+@media only screen and (max-width: 1000px) {
+  .header {
+    height: 5vh;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+    margin-left: 5px;
+    margin-right: 5px;
+    top: 2vh;
+  }
+
+  .header__logo {
+    height: 3vh;
+    max-height: 12px;
+    margin-left: 5px;
+  }
+
+  .header__logo:hover {
+    height: 2vh;
+  }
+
+  .header__nav {
+    margin-right: 5px;
+  }
+
+  .header__option {
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+
+  .header__optionLineOne {
+    font-size: 10px;
+  }
+
+  .header__optionLineOne:hover {
+    font-size: 8px;
+  }
+
+  .header__optionLineTwo {
+    font-size: 12px;
+    font-weight: 400;
+  }
+
+  .header__optionLineTwo:hover {
+    font-size: 10px;
+  }
+}
