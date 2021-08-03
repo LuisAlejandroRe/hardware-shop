@@ -1,10 +1,16 @@
 import Header from "./Components/Header/Header";
+import Footer from "./Components/Footer/Footer";
 import Home from "./Components/Home/Home";
 import Checkout from "./Components/Checkout/Checkout";
 import Login from "./Components/Login/Login";
 import Payment from "./Components/Payment/Payment";
 import Orders from "./Components/Orders/Orders";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect,
+} from "react-router-dom";
 import { useEffect } from "react";
 import { auth } from "./firebase";
 import { useStateValue } from "./StateProvider";
@@ -37,26 +43,33 @@ function App() {
     <Router>
       <div className="app">
         <Switch>
-          <Route path="/orders">
+          <Route exact path="/orders">
             <Header />
             <Orders />
+            <Footer />
           </Route>
-          <Route path="/login">
+          <Route exact path="/login">
             <Login />
           </Route>
-          <Route path="/checkout">
+          <Route exact path="/checkout">
             <Header />
             <Checkout />
+            <Footer />
           </Route>
-          <Route path="/payment">
+          <Route exact path="/payment">
             <Header />
             <Elements stripe={promise}>
               <Payment />
             </Elements>
+            <Footer />
           </Route>
-          <Route path="/">
+          <Route exact path="/">
             <Header />
             <Home />
+            <Footer />
+          </Route>
+          <Route path="*">
+            <Redirect to="/" />
           </Route>
         </Switch>
       </div>

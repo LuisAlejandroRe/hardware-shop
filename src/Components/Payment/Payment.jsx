@@ -168,7 +168,7 @@ function Payment() {
                   value={password} 
                   onChange={(e) => setPassword(e.target.value)}
                 />
-                <button type='submit' onClick={login}>Sign In</button>
+                <button type='submit' onClick={login}>Continue</button>
               </form>
             </div>
           }
