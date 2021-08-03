@@ -7,7 +7,7 @@ import CheckoutProduct from '../CheckoutProduct/CheckoutProduct';
 import './Payment.css';
 import { useStateValue } from '../../StateProvider';
 import axios from '../../axios';
-import { db } from '../../firebase';
+import { auth, db } from '../../firebase';
 
 function Payment() {
 
@@ -22,6 +22,8 @@ function Payment() {
   const [error, setError ] = useState(null);
   const [disabled, setDisabled] = useState(true);
   const [clientSecret, setClientSecret] = useState(true);
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
 
   useEffect(() => {
 
@@ -74,6 +76,14 @@ function Payment() {
     setError(event.error ? event.error.message : "");
   }
 
+  const login = (e) => {
+    e.preventDefault();
+    auth
+      .signInWithEmailAndPassword(email, password)
+      .then()
+      .catch(error => alert(error.message))
+  }
+
   return(
     <div className="payment">
       <div className="payment__container">
@@ -117,7 +127,9 @@ function Payment() {
           <div className="payment__title">
             <h3>Payment Method</h3>
           </div>
-          <div className="payment__details">
+          {user
+            ?        
+            <div className="payment__details">
               <form onSubmit={handleSubmit}>
                 <CardElement onChange={handleChange} />
                 <div className="payment__priceContainer">
@@ -138,7 +150,28 @@ function Payment() {
 
                 {error && <div>{error}</div>}
               </form>
-          </div>
+            </div>
+            :
+            <div className="payment__login">
+              <form>
+                <label>E-mail</label>
+                <input 
+                  type="email" 
+                  placeholder='e-mail' 
+                  value={email} 
+                  onChange={(e) => setEmail(e.target.value)}
+                />
+                <label>Password</label>
+                <input 
+                  type="password" 
+                  placeholder='password' 
+                  value={password} 
+                  onChange={(e) => setPassword(e.target.value)}
+                />
+                <button type='submit' onClick={login}>Sign In</button>
+              </form>
+            </div>
+          }
         </div>
 
       </div>

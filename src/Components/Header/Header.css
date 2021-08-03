@@ -1,7 +1,7 @@
 .header {
-  height: 10vh;
-  margin-top: 3vh;
-  margin-bottom: 3vh;
+  height: 70px;
+  margin-top: 10px;
+  margin-bottom: 10px;
   margin-left: 50px;
   margin-right: 50px;
   border-radius: 15px;
@@ -11,7 +11,7 @@
   justify-content: space-between;
   background-color: rgba(255, 255, 255, 0.8);
   position: sticky;
-  top: 3vh;
+  top: 10px;
   z-index: 100;
   -webkit-box-shadow: 0px 0px 100px 5px rgba(0, 0, 0, 0.9);
   -moz-box-shadow: 0px 0px 100px 5px rgba(0, 0, 0, 0.9);
@@ -19,14 +19,13 @@
 }
 
 .header__logo {
-  height: 5vh;
-  max-height: 40px;
+  height: 30px;
   margin-left: 30px;
   transition: all ease-in 200ms;
 }
 
 .header__logo:hover {
-  height: 4vh;
+  height: 25px;
 }
 
 .header__nav {
@@ -49,36 +48,36 @@
 }
 
 .header__optionLineOne {
-  font-size: 20px;
+  font-size: 18px;
   transition: all ease-in 200ms;
 }
 
 .header__optionLineOne:hover {
-  font-size: 18px;
+  font-size: 15px;
 }
 
 .header__optionLineTwo {
-  font-size: 25px;
+  font-size: 20px;
   font-weight: 800;
   transition: all ease-in 200ms;
 }
 
 .header__optionLineTwo:hover {
-  font-size: 23px;
+  font-size: 18px;
 }
 
 @media only screen and (max-width: 1000px) {
   .header {
-    height: 5vh;
-    margin-top: 2vh;
-    margin-bottom: 2vh;
+    height: 50px;
+    margin-top: 10px;
+    margin-bottom: 10px;
     margin-left: 5px;
     margin-right: 5px;
     top: 2vh;
   }
 
   .header__logo {
-    height: 3vh;
+    height: 20px;
     max-height: 12px;
     margin-left: 5px;
   }
@@ -104,7 +103,8 @@
     font-size: 8px;
   }
 
-  .header__optionLineTwo {
+  .header__optionLineTwo,
+  .header__optionLineTwo .MuiSvgIcon-root {
     font-size: 12px;
     font-weight: 400;
   }

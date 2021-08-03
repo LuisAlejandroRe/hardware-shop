@@ -11,17 +11,17 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  height: 84vh;
+  height: calc(100vh - 90px);
 }
 
 .home__image {
-  width: 40%;
-  margin-bottom: 5vh;
+  max-width: 40%;
+  max-height: 100%;
 }
 
 .home__message {
-  width: 40%;
-  margin-bottom: 7vh;
+  max-width: 40%;
+  max-height: 80%;
 }
 
 .home__row__title {
@@ -45,7 +45,7 @@
 
 @media only screen and (max-width: 1000px) {
   .home__imagesContainer {
-    height: 91vh;
+    height: calc(100vh - 70px);
   }
 
   .home__image {
@@ -53,8 +53,8 @@
   }
 
   .home__message {
-    width: 90%;
-    max-height: 60vh;
+    max-width: 90%;
+    max-height: 100%;
     margin-bottom: 0;
   }
 
